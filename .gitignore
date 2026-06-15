@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Superpowers brainstorm sessions
+.superpowers/
