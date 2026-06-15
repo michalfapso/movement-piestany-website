@@ -2,10 +2,22 @@
 const whatsappUrl = 'https://chat.whatsapp.com/JWNQtADUh8V0PoDMlHVVjR';
 ---
 <section id="hero" class="relative min-h-[90vh] flex items-center bg-surface-base overflow-hidden">
+  <!-- Background photo with dark overlay -->
+  <div class="absolute inset-0">
+    <img
+      src="/images/hero.jpg"
+      alt=""
+      role="presentation"
+      class="w-full h-full object-cover opacity-30"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-surface-base/70 via-transparent to-surface-base/90"></div>
+  </div>
+
   <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24 w-full">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-      <!-- Left: headline + CTAs -->
+      <!-- Left: headline + CTAs + mobile video -->
       <div>
         <p class="text-accent-lime text-xs font-bold tracking-[0.3em] mb-6 font-heading">
           POHYBOVÁ ŠKOLA · PIEŠŤANY
@@ -29,6 +41,22 @@ const whatsappUrl = 'https://chat.whatsapp.com/JWNQtADUh8V0PoDMlHVVjR';
           <span class="border border-content-muted text-content-secondary text-sm px-6 py-3 rounded-lg flex items-center">
             Prvá hodina zadarmo
           </span>
+        </div>
+
+        <!-- Video: mobile only, landscape, shown below CTAs -->
+        <div class="mt-10 lg:hidden">
+          <div class="relative w-full aspect-video rounded-xl overflow-hidden border border-stroke-card">
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              class="absolute inset-0 w-full h-full object-cover"
+              poster="/images/hero.jpg"
+            >
+              <source src="/videos/hero.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
 
