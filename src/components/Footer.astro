@@ -1,0 +1,55 @@
+---
+const whatsappUrl = 'https://chat.whatsapp.com/JWNQtADUh8V0PoDMlHVVjR';
+const instagramUrl = 'https://www.instagram.com/movement_piestany/';
+// Dark-styled Google Maps embed: standard iframe URL + CSS invert trick
+// NOTE: replace this with the proper embed URL from Google Maps:
+// 1. Open https://maps.app.goo.gl/VVUUFWu8wdTSVGQx7 in a browser
+// 2. Click Share → Embed a map → copy the src="..." value
+// 3. Paste it here
+const mapsEmbedUrl = 'https://maps.google.com/maps?q=Lubyjoga,+Teplická+28/112,+921+01+Piešťany,+Slovakia&output=embed&hl=sk&z=16';
+---
+<footer id="kontakt" class="bg-surface-footer border-t border-stroke-subtle">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
+
+      <!-- Left: address + links -->
+      <div>
+        <p class="font-heading font-extrabold text-sm tracking-widest text-accent-lime mb-4">MOVEMENT PIEŠŤANY</p>
+        <address class="not-italic text-content-muted text-sm leading-relaxed">
+          Lubyjoga<br>
+          Teplická 28/112<br>
+          921 01 Piešťany
+        </address>
+        <div class="flex gap-5 mt-5">
+          <a href={instagramUrl} target="_blank" rel="noopener"
+             class="text-content-secondary text-sm hover:text-content-primary transition-colors">
+            Instagram ↗
+          </a>
+          <a href={whatsappUrl} target="_blank" rel="noopener"
+             class="text-content-secondary text-sm hover:text-content-primary transition-colors">
+            WhatsApp ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: dark-styled map embed -->
+      <div class="rounded-xl overflow-hidden border border-stroke-card">
+        <iframe
+          src={mapsEmbedUrl}
+          width="100%"
+          height="220"
+          style="border:0; filter:invert(90%) hue-rotate(180deg); display:block;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa — Lubyjoga, Piešťany"
+        ></iframe>
+      </div>
+
+    </div>
+
+    <div class="border-t border-stroke-subtle mt-10 pt-6 text-center">
+      <p class="text-content-muted text-xs">© 2026 Movement Piešťany</p>
+    </div>
+  </div>
+</footer>
