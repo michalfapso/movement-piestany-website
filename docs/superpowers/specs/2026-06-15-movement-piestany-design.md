@@ -62,23 +62,32 @@ All colour tokens are registered in `tailwind.config.mjs` under `theme.extend.co
 ```js
 // tailwind.config.mjs (excerpt)
 colors: {
-  'bg-base':    '#080808',
-  'bg-card':    '#121212',
-  'bg-deep':    '#0a0a0a',
-  'bg-footer':  '#050505',
-  'accent-lime':'#EDFE03',
-  'accent-cyan':'#00D8FF',
-  'text-primary':'#ffffff',
-  'text-body':  '#999999',
-  'text-secondary':'#888888',
-  'text-label': '#aaaaaa',
-  'text-muted': '#777777',
-  'border-card':'#1e1e1e',
-  'border-subtle':'#1a1a1a',
+  surface: {
+    base:   '#080808',  // bg-surface-base
+    card:   '#121212',  // bg-surface-card
+    deep:   '#0a0a0a',  // bg-surface-deep
+    footer: '#050505',  // bg-surface-footer
+    nav:    '#0d0d0d',  // bg-surface-nav
+  },
+  accent: {
+    lime: '#EDFE03',    // text-accent-lime / bg-accent-lime
+    cyan: '#00D8FF',    // text-accent-cyan
+  },
+  content: {
+    primary:   '#ffffff', // text-content-primary
+    body:      '#999999', // text-content-body  (minimum on bg-surface-base)
+    secondary: '#888888', // text-content-secondary
+    label:     '#aaaaaa', // text-content-label
+    muted:     '#777777', // text-content-muted
+  },
+  stroke: {
+    card:   '#1e1e1e',  // border-stroke-card
+    subtle: '#1a1a1a',  // border-stroke-subtle
+  },
 }
 ```
 
-Usage: `text-body`, `bg-card`, `border-border-card`, `text-accent-lime`, etc.
+Usage examples: `bg-surface-base`, `bg-surface-card`, `text-content-body`, `text-accent-lime`, `border-stroke-card`.
 
 ### Interactive Elements
 
