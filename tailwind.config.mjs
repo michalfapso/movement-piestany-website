@@ -18,7 +18,7 @@ export default {
         },
         content: {
           primary:   '#ffffff',
-          body:      '#999999',
+          body:      '#aaaaaa',
           secondary: '#888888',
           label:     '#aaaaaa',
           muted:     '#777777',

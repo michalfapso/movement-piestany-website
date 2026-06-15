@@ -17,3 +17,5 @@ dist/
 
 # Superpowers brainstorm sessions
 .superpowers/
+
+tmp/
