@@ -1,14 +1,18 @@
 ---
+import { Image } from 'astro:assets';
+import trenerImg from '../assets/images/trener.jpg';
 ---
 <section id="trener" class="py-20 bg-surface-deep border-t border-stroke-subtle">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <p class="text-content-label text-xs font-bold tracking-[0.3em] mb-8 font-heading">TRÉNER</p>
     <div class="flex flex-col sm:flex-row gap-6 sm:gap-10 items-start">
-      <img
-        src="/images/trener.jpg"
+      <Image
+        src={trenerImg}
         alt="Radovan Komár — pohybový praktik"
         class="w-52 h-52 sm:w-56 sm:h-56 object-cover rounded-xl border-2 border-accent-lime flex-shrink-0"
         loading="lazy"
+        widths={[224, 448]}
+        sizes="224px"
       />
       <div>
         <h2 class="font-heading font-black text-2xl text-content-primary">Radovan Komár</h2>

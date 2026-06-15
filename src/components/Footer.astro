@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import logoImg from '../assets/images/logo_bg-black.jpg';
 const whatsappUrl = 'https://chat.whatsapp.com/JWNQtADUh8V0PoDMlHVVjR';
 const instagramUrl = 'https://www.instagram.com/movement_piestany/';
 // Dark-styled Google Maps embed: standard iframe URL + CSS invert trick
@@ -14,7 +16,7 @@ const mapsEmbedUrl = 'https://maps.google.com/maps?q=Lubyjoga,+Teplická+28/112,
 
       <div>
         <div class="bg-surface-base flex justify-center">
-          <img src="/images/logo_bg-black.jpg" alt="Movement Piešťany" class="h-60 w-auto" />
+          <Image src={logoImg} alt="Movement Piešťany" class="h-60 w-auto" widths={[320, 640]} sizes="320px" />
         </div>
       </div>
 

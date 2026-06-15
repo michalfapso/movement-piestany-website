@@ -1,4 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+import galeria1 from '../assets/images/galeria-1.jpg';
+import galeria2 from '../assets/images/galeria-2.jpg';
+import galeria3 from '../assets/images/galeria-3.jpg';
 ---
 <section id="galeria" class="py-20 bg-surface-base border-t border-stroke-subtle">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -13,11 +17,13 @@
 
       <!-- Large photo: group training -->
       <div class="relative sm:col-span-2 sm:row-span-2 rounded-xl overflow-hidden min-h-[260px]">
-        <img
-          src="/images/galeria-1.jpg"
+        <Image
+          src={galeria1}
           alt="Skupinový tréning Movement Piešťany"
           class="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
+          widths={[640, 1024, 1280]}
+          sizes="(min-width: 640px) 66vw, 100vw"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-surface-base/60 to-transparent pointer-events-none"></div>
         <span class="absolute top-3 left-3 bg-surface-base/80 border border-accent-lime/40 text-accent-lime text-xs font-bold px-2 py-1 rounded font-heading tracking-wider">
@@ -27,11 +33,13 @@
 
       <!-- Small photo: skill/handstand -->
       <div class="relative rounded-xl overflow-hidden min-h-[180px]">
-        <img
-          src="/images/galeria-2.jpg"
+        <Image
+          src={galeria2}
           alt="Stojka"
           class="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
+          widths={[320, 640, 800]}
+          sizes="(min-width: 640px) 33vw, 100vw"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-surface-base/60 to-transparent pointer-events-none"></div>
         <span class="absolute top-3 left-3 bg-surface-base/80 border border-accent-cyan/40 text-accent-cyan text-xs font-bold px-2 py-1 rounded font-heading tracking-wider">
@@ -41,11 +49,13 @@
 
       <!-- Small photo: outdoor -->
       <div class="relative rounded-xl overflow-hidden min-h-[180px]">
-        <img
-          src="/images/galeria-3.jpg"
+        <Image
+          src={galeria3}
           alt="Outdoor tréning"
           class="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
+          widths={[320, 640, 800]}
+          sizes="(min-width: 640px) 33vw, 100vw"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-surface-base/60 to-transparent pointer-events-none"></div>
         <span class="absolute top-3 left-3 bg-surface-base/80 border border-accent-lime/40 text-accent-lime text-xs font-bold px-2 py-1 rounded font-heading tracking-wider">
