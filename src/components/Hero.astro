@@ -1,0 +1,42 @@
+---
+const whatsappUrl = 'https://chat.whatsapp.com/JWNQtADUh8V0PoDMlHVVjR';
+---
+<section id="hero" class="relative min-h-[90vh] flex items-center bg-surface-base overflow-hidden">
+  <!-- Background photo with dark overlay -->
+  <div class="absolute inset-0">
+    <img
+      src="/images/hero.jpg"
+      alt=""
+      role="presentation"
+      class="w-full h-full object-cover opacity-20"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-surface-base/70 via-transparent to-surface-base/90"></div>
+  </div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24">
+    <p class="text-accent-lime text-xs font-bold tracking-[0.3em] mb-6 font-heading">
+      POHYBOVÁ ŠKOLA · PIEŠŤANY
+    </p>
+    <h1 class="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-content-primary">
+      HÝB SA.<br>
+      OBJAVUJ.<br>
+      <span class="text-accent-lime">ROZVÍJAJ SA.</span>
+    </h1>
+    <p class="mt-6 text-content-body text-base leading-relaxed max-w-md">
+      Skupinové lekcie pohybovej kultúry pre začiatočníkov aj pokročilých.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a
+        href={whatsappUrl}
+        target="_blank" rel="noopener"
+        class="bg-gradient-to-r from-accent-lime to-accent-cyan text-surface-base font-bold text-sm px-6 py-3 rounded-lg hover:brightness-110 transition-all"
+      >
+        Pridaj sa na WhatsApp →
+      </a>
+      <span class="border border-content-muted text-content-secondary text-sm px-6 py-3 rounded-lg flex items-center">
+        Prvá hodina zadarmo
+      </span>
+    </div>
+  </div>
+</section>
