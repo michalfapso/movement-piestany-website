@@ -1,0 +1,47 @@
+---
+const piliere = [
+  {
+    label: 'MOBILITA',
+    accent: 'lime' as const,
+    title: 'Kĺby, rozsah, sloboda pohybu',
+    desc: 'Postupné uvoľňovanie obmedzení — od chrbtice po členky.',
+  },
+  {
+    label: 'SILA',
+    accent: 'cyan' as const,
+    title: 'Vlastná váha ako nástroj',
+    desc: 'Kontrola tela bez posilňovne.',
+  },
+  {
+    label: 'KOORDINÁCIA & HRA',
+    accent: 'lime' as const,
+    title: 'Spolu je to zábavnejšie',
+    desc: 'Partnerské cvičenia, hry a výzvy.',
+  },
+  {
+    label: 'LOKOMÓCIA & STOJKY',
+    accent: 'cyan' as const,
+    title: 'Flow, rovnováha, pohyb',
+    desc: 'Prirodzený pohyb v priestore, stojky.',
+  },
+];
+---
+<section id="piliere" class="py-20 bg-surface-deep border-t border-stroke-subtle">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <p class="text-content-label text-xs font-bold tracking-[0.3em] mb-8 font-heading">PILIERE TRÉNINGOV</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      {piliere.map(p => (
+        <div class="bg-surface-card border border-stroke-card rounded-xl p-5 hover:shadow-[0_0_15px_rgba(237,254,3,0.06)] transition-shadow">
+          <p class:list={[
+            'text-xs font-bold tracking-[0.2em] mb-2 font-heading',
+            p.accent === 'lime' ? 'text-accent-lime' : 'text-accent-cyan',
+          ]}>
+            {p.label}
+          </p>
+          <h3 class="font-heading font-bold text-base text-content-primary mb-1">{p.title}</h3>
+          <p class="text-content-body text-xs leading-relaxed">{p.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
