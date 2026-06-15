@@ -55,6 +55,31 @@ A single-page landing website in Slovak for Movement Piešťany — a movement t
 - **Headlines:** Outfit, 800–900 weight, tight `letter-spacing: -0.5px` to `-1px`
 - **Body:** Inter, 11–12px, `line-height: 1.6–1.7`, colour `#999`
 
+### Tailwind Colour Configuration
+
+All colour tokens are registered in `tailwind.config.mjs` under `theme.extend.colors` so that every colour is a single-point-of-change and the implementation uses semantic class names throughout (e.g. `text-body`, `bg-card`, `text-accent-lime`). Never use raw hex values in component markup.
+
+```js
+// tailwind.config.mjs (excerpt)
+colors: {
+  'bg-base':    '#080808',
+  'bg-card':    '#121212',
+  'bg-deep':    '#0a0a0a',
+  'bg-footer':  '#050505',
+  'accent-lime':'#EDFE03',
+  'accent-cyan':'#00D8FF',
+  'text-primary':'#ffffff',
+  'text-body':  '#999999',
+  'text-secondary':'#888888',
+  'text-label': '#aaaaaa',
+  'text-muted': '#777777',
+  'border-card':'#1e1e1e',
+  'border-subtle':'#1a1a1a',
+}
+```
+
+Usage: `text-body`, `bg-card`, `border-border-card`, `text-accent-lime`, etc.
+
 ### Interactive Elements
 
 - **Primary CTA:** `background: linear-gradient(90deg, #EDFE03, #00D8FF)`, `color: #080808`, `font-weight: 700`
