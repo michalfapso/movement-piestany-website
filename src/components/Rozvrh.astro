@@ -1,0 +1,45 @@
+---
+const whatsappUrl = 'https://chat.whatsapp.com/JWNQtADUh8V0PoDMlHVVjR';
+---
+<section id="rozvrh" class="py-20 bg-surface-deep border-t border-stroke-subtle">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <p class="text-content-label text-xs font-bold tracking-[0.3em] mb-8 font-heading">ROZVRH & KOMUNITA</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+      <!-- Wide card: schedule explanation -->
+      <div class="sm:col-span-2 bg-surface-card border border-stroke-card rounded-xl p-6">
+        <p class="text-content-primary font-bold text-base mb-2">📅 Aktuálny rozvrh</p>
+        <p class="text-content-body text-sm leading-relaxed mb-4">
+          Rozvrh sa pravidelne aktualizuje. Vždy nájdeš aktuálne termíny v našej WhatsApp skupine.
+          Keď sa chceš prihlásiť na hodinu, jednoducho daj like príslušnému príspevku.
+        </p>
+        <a
+          href={whatsappUrl}
+          target="_blank" rel="noopener"
+          class="inline-block bg-accent-lime text-surface-base text-xs font-bold px-4 py-2 rounded hover:brightness-110 transition-all"
+        >
+          Otvoriť WhatsApp skupinu ↗
+        </a>
+      </div>
+
+      <!-- Venue -->
+      <div class="bg-surface-card border border-stroke-card rounded-xl p-5">
+        <p class="text-accent-cyan text-xs font-bold tracking-[0.2em] mb-2 font-heading">📍 MIESTO</p>
+        <p class="text-content-primary font-bold text-sm mb-1">Lubyjoga</p>
+        <p class="text-content-body text-xs leading-relaxed">
+          Teplická 28/112<br>921 01 Piešťany
+        </p>
+      </div>
+
+      <!-- Outdoor note -->
+      <div class="bg-surface-card border border-stroke-card rounded-xl p-5">
+        <p class="text-accent-lime text-xs font-bold tracking-[0.2em] mb-2 font-heading">🌤 VONKU</p>
+        <p class="text-content-primary font-bold text-sm mb-1">Aj outdoors!</p>
+        <p class="text-content-body text-xs leading-relaxed">
+          Podľa počasia — miesto vždy oznámené vo WhatsApp.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
