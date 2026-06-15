@@ -1,0 +1,58 @@
+---
+---
+<section id="galeria" class="py-20 bg-surface-base border-t border-stroke-subtle">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <p class="text-content-label text-xs font-bold tracking-[0.3em] mb-8 font-heading">AKO TO VYZERÁ</p>
+
+    <!--
+      Bento layout:
+      - Desktop (sm+): 3-column grid, large photo spans col 1-2 and row 1-2, two small photos in col 3
+      - Mobile: stacked vertically
+    -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 sm:grid-rows-2 gap-3">
+
+      <!-- Large photo: group training -->
+      <div class="relative sm:col-span-2 sm:row-span-2 rounded-xl overflow-hidden min-h-[260px]">
+        <img
+          src="/images/galeria-1.jpg"
+          alt="Skupinový tréning Movement Piešťany"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-surface-base/60 to-transparent pointer-events-none"></div>
+        <span class="absolute top-3 left-3 bg-surface-base/80 border border-accent-lime/40 text-accent-lime text-xs font-bold px-2 py-1 rounded font-heading tracking-wider">
+          SKUPINOVÝ TRÉNING
+        </span>
+      </div>
+
+      <!-- Small photo: skill/handstand -->
+      <div class="relative rounded-xl overflow-hidden min-h-[180px]">
+        <img
+          src="/images/galeria-2.jpg"
+          alt="Stojka"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-surface-base/60 to-transparent pointer-events-none"></div>
+        <span class="absolute top-3 left-3 bg-surface-base/80 border border-accent-cyan/40 text-accent-cyan text-xs font-bold px-2 py-1 rounded font-heading tracking-wider">
+          STOJKA
+        </span>
+      </div>
+
+      <!-- Small photo: outdoor -->
+      <div class="relative rounded-xl overflow-hidden min-h-[180px]">
+        <img
+          src="/images/galeria-3.jpg"
+          alt="Outdoor tréning"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-surface-base/60 to-transparent pointer-events-none"></div>
+        <span class="absolute top-3 left-3 bg-surface-base/80 border border-accent-lime/40 text-accent-lime text-xs font-bold px-2 py-1 rounded font-heading tracking-wider">
+          OUTDOOR
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
