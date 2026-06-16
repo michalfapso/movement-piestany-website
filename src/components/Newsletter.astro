@@ -1,0 +1,97 @@
+---
+// Replace these with real values from your MailerLite dashboard
+// (Embedded form → Code → look for ml_account and form id in the snippet)
+const ACCOUNT_ID = 'YOUR_ACCOUNT_ID';
+const FORM_ID = 'YOUR_FORM_ID';
+const ENDPOINT = `https://assets.mailerlite.com/jsonp/${ACCOUNT_ID}/forms/${FORM_ID}/subscribe`;
+---
+
+<section id="newsletter" class="py-20 bg-surface-base border-t border-stroke-subtle">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex justify-center">
+    <div class="w-full max-w-[540px] bg-surface-card border border-stroke-card rounded-2xl px-8 py-10">
+
+      <p class="text-accent-cyan text-xs font-bold tracking-[0.3em] font-heading uppercase mb-3">
+        NEWSLETTER
+      </p>
+
+      <h2 class="text-content-primary font-heading font-black text-3xl sm:text-4xl mb-3">
+        Zostaň v obraze
+      </h2>
+
+      <p class="text-content-body text-base mb-6">
+        Nové hodiny, tipy na pohyb a aktuálny rozvrh — priamo do e-mailu.
+      </p>
+
+      <div id="nl-form-wrapper">
+        <form id="nl-form" novalidate>
+          <div class="flex flex-col sm:flex-row gap-3 mb-3">
+            <input
+              id="nl-email"
+              type="email"
+              name="fields[email]"
+              placeholder="tvoj@email.sk"
+              autocomplete="email"
+              required
+              class="flex-1 bg-surface-base border border-stroke-card rounded-lg px-4 py-3 text-content-primary placeholder-content-muted focus:outline-none focus:border-accent-cyan text-base"
+            />
+            <button
+              id="nl-submit"
+              type="submit"
+              class="bg-accent-lime text-surface-base font-heading font-extrabold text-sm tracking-wide px-6 py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+            >
+              Prihlásiť sa
+            </button>
+          </div>
+
+          <p id="nl-error" class="hidden text-content-muted text-sm mb-1">
+            Niečo sa pokazilo. Skús to znova.
+          </p>
+
+          <p class="text-content-muted text-xs text-center">
+            Žiadny spam. Odhlásiš sa kedykoľvek.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ ENDPOINT }}>
+  const form = document.getElementById('nl-form');
+  const emailInput = document.getElementById('nl-email');
+  const submitBtn = document.getElementById('nl-submit');
+  const errorMsg = document.getElementById('nl-error');
+  const wrapper = document.getElementById('nl-form-wrapper');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // --- submitting state ---
+    submitBtn.disabled = true;
+    submitBtn.textContent = '…';
+    errorMsg.classList.add('hidden');
+
+    try {
+      const body = new URLSearchParams({ 'fields[email]': emailInput.value });
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      // --- success state ---
+      wrapper.innerHTML =
+        '<p class="text-accent-lime font-heading font-bold text-lg text-center py-4">' +
+        'Skvelé! Pozri si e-mail a potvrď prihlásenie.' +
+        '</p>';
+    } catch (_err) {
+      // --- error state ---
+      errorMsg.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Prihlásiť sa';
+    }
+  });
+</script>
