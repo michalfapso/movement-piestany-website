@@ -80,7 +80,8 @@ const ENDPOINT = `https://assets.mailerlite.com/jsonp/${ACCOUNT_ID}/forms/${FORM
         body: body.toString(),
       });
 
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.message ?? `HTTP ${res.status}`);
 
       // --- success state ---
       wrapper.innerHTML =
